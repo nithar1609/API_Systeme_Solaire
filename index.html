@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Le Système Solaire</title>
+    <script src="script.js" ></script>
+</head>
+<body>
+    <!-- La partie intro avec le titre, la présentation du Système, du soleil, et des planètes -->
+    <h1>Le Système Solaire</h1>
+    <div class="intro">
+        <p style="color: white;">Le Système solaire est composé du Soleil mais aussi de tout ce qui gravite autour de celui-ci : les planètes et leurs satellites, les planètes naines, les astéroïdes, les objets de la ceinture de Kuiper et les comètes. On parle également de Système solaire lorsqu’on fait référence à un groupe de corps célestes orbitant autour d’une étoile (on parle alors de planètes extrasolaires). Dans cette animation, le Système solaire représente le système incluant le Soleil et la Terre. Les dimensions du système solaire sont définies par rapport à la distance Soleil-Terre, que l’on appelle « unité astronomique » (UA). Une UA fait 150 millions de km. On estime que la distance entre le soleil et la frontière du système solaire est d’environ 86 à 100 UA. </p>
+        <fieldset class="cadre">
+            <legend class="legend_accueil">LE SOLEIL</legend>
+            <img src="images/soleil.png" alt="image représentant le Soleil" title="Soleil" />
+            <p>
+                Le soleil est une étoile de taille et de luminosité moyennes. Les rayons solaires et autres radiations sont produits grâce à la conversion d’hydrogène en hélium à l’intérieur du soleil brûlant et dense. Bien que cette fusion nucléaire brûle 600 millions de tonnes d’hydrogène par seconde, le Soleil est si massif (2 x 10 puissance 30 kg) qu’il peut continuer à briller autant pendant encore 6 milliards d’années ! C’est cette stabilité qui a permis à la vie de se développer et de survivre sur terre.
+            </p>
+        </fieldset>
+        <fieldset class="cadre">
+            <legend class="legend_accueil">LES PLANÈTES TELLURIQUES</legend>
+            <p>
+                Les planètes telluriques sont principalement composées de roches et de métaux et ont une densité relativement élevée, une rotation lente, une surface solide, pas d'anneaux et peu de satellites.
+            </p>
+        </fieldset>
+        <fieldset class="cadre">
+            <legend class="legend_accueil">LES PLANÈTES GAZEUSES</legend>
+            <p>
+                Les planètes gazeuses sont principalement composées d'hydrogène et d'hélium et généralement ont une faible densité, une rotation rapide, des atmosphères épaisses, des anneaux et beaucoup de satellites.
+            </p>
+        </fieldset>
+        <!-- Lorsqu'on ajoute, modifie ou supprime des planètes, elles seront affichés, modifiés ou enlevés de la liste -->
+        <fieldset class="cadre">
+            <legend class="legend_accueil">Vos planètes</legend>
+        <div id="content" style="display: flex; flex-wrap: wrap; width: 100%; justify-content: center; color:azure;">Vous devez activer JS</div>
+        </fieldset>
+        <!-- Formulaire pour ajouter une planete -->
+        <fieldset class="cadre" style="align-items: center; padding: 40px; display: flex; flex-wrap: wrap;">
+            <legend class="legend_accueil">Pour ajouter une planète, veuillez remplir le formulaire ci-dessous</legend>
+            <div style="width: 33%; align-items:center;">
+                <label for="nom_planete">Nom : </label><br>
+                <input type="text" name="nom_planete" id="nom_planete" required>
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="masse_planete">Masse : </label><br>
+                <input type="text" name="masse_planete" id="masse_planete" required>
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="densite_planete">Densité : </label><br>
+                <input type="text" name="densite_planete" id="densite_planete" required>
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="tempMin_planete">Température minimale : </label><br>
+                <input type="number" name="tempMin_planete" id="tempMin_planete" required>
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="tempMax_planete">Température maximale : </label><br>
+                <input type="number" name="tempMax_planete" id="tempMax_planete" required>
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="img_planete">Chemin vers l'image : </label><br>
+                <input type="text" id="img_planete" name="img_planete" accept="image/png, image/jpeg" required>
+            </div>
+            <div style="align-items: center; width: 100%; margin-top: 30px;">
+                <button onclick="send_planete()">Ajouter la planète</button><br><br>
+            </div>
+        </fieldset>
+        <!-- formulaire pour modifier les données d'une planète sélectionné -->
+        <fieldset class="cadre" style="align-items: center; padding: 40px; display: flex; flex-wrap: wrap;">
+            <legend class="legend_accueil">Modifier une planète</legend>
+            <div style="width: 100%; align-items:center; padding-bottom: 15px;">
+            <select id="modifier_planete"></select>
+            </div>
+            <div style="width: 33%; align-items:center;">
+                <label for="nouveau_nom_planete">Nom : </label><br>
+                <input type="text" name="nouveau_nom_planete" id="nouveau_nom_planete">
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="nouveau_masse_planete">Masse : </label><br>
+                <input type="text" name="nouveau_masse_planete" id="nouveau_masse_planete">
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="nouveau_densite_planete">Densité : </label><br>
+                <input type="text" name="nouveau_densite_planete" id="nouveau_densite_planete">
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="nouveau_tempMin_planete">Température minimale : </label><br>
+                <input type="number" name="nouveau_tempMin_planete" id="nouveau_tempMin_planete">
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="nouveau_tempMax_planete">Température maximale : </label><br>
+                <input type="number" name="nouveau_tempMax_planete" id="nouveau_tempMax_planete">
+            </div>
+            <div style="width: 33%; align-items: center;">
+                <label for="nouveau_img_planete">Chemin vers l'image : </label><br>
+                <input type="text" id="nouveau_img_planete" name="nouveau_img_planete" accept="image/png, image/jpeg">
+            </div>
+            <div style="align-items: center; width: 100%; margin-top: 30px;">
+                <button onclick="update_planete()">Modifier la planète</button><br><br>
+            </div>
+        </fieldset>
+        <!-- supprimer une planète -->
+        <fieldset class="cadre" style="align-items: center; padding: 40px; display: flex; flex-wrap: wrap;">
+            <legend class="legend_accueil">Supprimer une planète</legend>
+            <div style="width: 100%; align-items:center; padding-bottom: 15px;">
+                <select id="supprimer_planete"></select>
+            </div>
+            <div style="align-items: center; width: 100%; margin-top: 30px;">
+                <button onclick="delete_planete()">Supprimer la planète</button><br><br><br>        
+            </div>
+        </fieldset>
+        <footer>
+            <p>© Created by Nitharshan BALASUNTHARAM BIE2023 © Le 26 Janvier 2022 ©</p>
+        </footer>
+    </div>
+</body>
+</html>

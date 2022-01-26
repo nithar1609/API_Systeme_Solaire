@@ -1,0 +1,122 @@
+/* Le corps de la page */
+body {
+	background-image: url("images/background.png");
+}
+/* Les titres de niveau 1 : Le Système Solaire */
+h1{
+    margin-top: 20px;
+    text-align: center;
+    color: rgb(78, 90, 128);
+    font-weight: bold;
+    font-variant: small-caps;
+    font-size: 3em;
+    text-decoration: underline;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* L'encadré des différents champs (soleil, planetes telluriques, planetes gazeuses, vos planetes, etc.) */
+.cadre {
+    border: rgb(226, 205, 12) solid 2px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+/* Les titres des encadrés */
+.legend_accueil {
+    text-align: center;
+    color: #ff0000;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 0px 5px;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+/* Les images dans les cadres */
+.cadre img{
+    width: 20%;
+}
+/* L'ensemble des balises est dans la div intro et centré dans le body*/
+.intro{
+    width: 90%;
+    border-radius: 10px;
+    text-align: center;
+    margin-left: 5%;
+	height: 80px;
+}
+/* les paragraphes */
+p{
+	padding: 0px 20px;
+	font-size: 1.3em;
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+}
+/* Les planetes */
+.planete{
+    border: rgb(0, 8, 255) solid 1px;
+    border-radius: 10px;
+    padding: 1px;
+    margin: 5px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 23%;
+}
+/* Les images des planètes */
+.planete img{
+    width: 80% ;
+    display:flex;
+}
+/* Les données des planètes */
+.planete p{
+    display: flex;
+    text-align: center;
+    padding: 0px 20px;
+	font-size: 1.3em;
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+}
+/* Les noms des champs des formulaires */
+label{
+    
+	font-size: 1.3em;
+    color: wheat;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: justify;
+}
+/* les champs de saisie des forulaires */
+input{
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 60%;
+    text-align: center;
+    color: rgb(255, 230, 167) ;
+    background-color: blue;
+    border-radius: 5px;
+}
+/* les boutons des formulaires */
+button{
+    border-radius: 10px;
+    width: 15%;
+    height: 30px;
+    text-align: center;
+    background-color: yellow;
+}
+/* la barre défilante des choix des planetes (pour modifier ou supprimer) */
+select{
+    background-color: rgb(59, 59, 59);
+    color: aliceblue;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    width: 25%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: large;
+}
+/* le pied de la page */
+footer p{
+    font-size: x-large;
+    font-weight: bolder;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 10px;
+    color: white;
+    text-align: center;
+}
